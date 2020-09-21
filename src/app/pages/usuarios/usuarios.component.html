@@ -1,0 +1,40 @@
+<div class="row d-flex justify-content-center align-content-center m-0">
+    <div class=" col-12 justify-content-center ">
+        <h3 class="text-center">Bienvenido {{nombre_owner}}</h3>
+        <div class="col-9 text-lg-right mb-2">
+            <button routerLink="/principal/usuarios/usuario" class="btn btn btn-primary">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        <table *ngIf="cargado" class="table container" style="width: 50%;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Contraseña</th>
+                    <th scope="col">Plataforma</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let usuario of usuarioRpa">
+                <tr>
+                    <th scope="row">{{usuario.id}}</th>
+                    <td>{{usuario.usuario}}</td>
+                    <td>{{usuario.password}}</td>
+                    <td>{{usuario.plataforma}}</td>
+                    <td class="d-flex justify-content-sm-around">
+                        <button [routerLink]="usuario.id" class="btn btn-primary">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button type="button" (click)="eliminar(usuario.id)" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>

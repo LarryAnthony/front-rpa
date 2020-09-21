@@ -1,0 +1,29 @@
+<div class="w-100" style="height: 100vh;">
+    <div>
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <form class="border p-3" id="loginform" style="background-color: rgb(187, 181, 181); width: 350px; "
+                [formGroup]='usuarioForm' (ngSubmit)='crear()'>
+
+                <div class="form-group">
+                    <label for="exampleInputUsuario">Usuario</label>
+                    <input type="text" class="form-control" id="exampleInputUsuario" aria-describedby="emailHelp"
+                        formControlName="usuario">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                </div>
+                <label for="">Plataforma</label>
+                <select class=" form-group form-control form-control-sm " formControlName="plataforma">
+                    <option>SAP</option>
+                    <option>INTRANET</option>
+                </select>
+                <div class="d-flex justify-content-around">
+                    <button type="button" routerLink="/principal/usuarios" class="btn btn-danger">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
