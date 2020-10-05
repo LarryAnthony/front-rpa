@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 import { tap } from 'rxjs/operators';
 import { UsuarioForm } from '../interfaces/usuario-form.interface';
-import { UpdateForm } from '../interfaces/update-form.interface';
 const base_url = environment.base_url;
 
 @Injectable({
